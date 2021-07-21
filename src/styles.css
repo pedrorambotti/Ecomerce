@@ -1,0 +1,44 @@
+* {
+  margin: 0px;
+}
+nav {
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.navbar-image {
+  width: 160px;
+}
+.searchbar-container {
+  display: flex;
+  margin: 0px 10px;
+  padding: 0;
+  align-items: center;
+  flex: 1;
+  align-items: stretch;
+}
+.searchbar {
+  display: flex;
+  margin: 0px 10px;
+  padding: 0;
+  align-items: center;
+  background: white;
+  margin-right: 20px;
+  flex: 1;
+  align-items: stretch;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.products-grid {
+  display: grid;
+  grid-auto-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}

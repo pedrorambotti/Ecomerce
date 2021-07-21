@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Searchbar from "./components/Searchbar";
+import NavBar from "./components/Navbar";
+import Cards from "./components/Cards";
+import "./styles.css";
+import { getProducts, getProductsData } from "./api";
 
-function App() {
+const { useState, useEffect } = React;
+
+export default function App() {
+  const [products, setProducts] = useState([]);
+  const fetchProducts = async () => {
+    try {
+      const data = await getProducts();
+      const promises = data.results.map(async (products) => {
+        return await getProductsData(products.url);
+      });
+      const results = await Promise.all(promises);
+      setProducts(results);
+    } catch (err) {}
+  };
+  useEffect(() => {
+    fetchProducts();
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NavBar />
+      <div className="App">
+        <Searchbar />
+        <Cards products={products} />
+      </div>
     </div>
   );
 }
-
-export default App;
