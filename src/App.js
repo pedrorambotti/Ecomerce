@@ -11,7 +11,7 @@ export default function App() {
   const [products, setProducts] = useState([]);
   const fetchProducts = async () => {
     try {
-      const data = await getProducts();
+      const data = await getProducts(products);
       const promises = data.results.map(async (products) => {
         return await getProductsData(products.url);
       });
