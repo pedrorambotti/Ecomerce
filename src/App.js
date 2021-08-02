@@ -11,12 +11,9 @@ export default function App() {
   const [products, setProducts] = useState([]);
   const fetchProducts = async () => {
     try {
-      const data = await getProducts(products);
-      const promises = data.results.map(async (products) => {
-        return await getProductsData(products.url);
-      });
-      const results = await Promise.all(promises);
-      setProducts(results);
+      const data = await getProducts();
+
+      setProducts(data);
     } catch (err) {}
   };
   useEffect(() => {

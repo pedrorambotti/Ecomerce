@@ -6,7 +6,7 @@ export const searchProduct = async (product) => {
     return data;
   } catch (err) {}
 };
-export const getProducts = async (limit = 10, offset = 0) => {
+export const getProducts = async (limit = 15, offset = 0) => {
   try {
     let url = `https://fakestoreapi.com/products?limit=${limit}&offset=${offset}`;
     const response = await fetch(url);

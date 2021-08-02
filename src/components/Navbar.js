@@ -2,7 +2,7 @@ import React from "react";
 
 const Navbar = () => {
   let imgUrl =
-    "https://image.freepik.com/vector-gratis/colorido-logo-mercado-gradiente_23-2148472540.jpg";
+    "https://img2.pngdownload.id/20180412/dgw/kisspng-gemstone-computer-icons-symbol-logo-diamond-shape-5ad02314a01695.7081262415235899086557.jpg";
   return (
     <nav>
       <div />

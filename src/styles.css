@@ -1,16 +1,22 @@
 * {
   margin: 0px;
 }
+
+div {
+  font-family: "Latin Modern Roman 10";
+  font-style: italic;
+}
 nav {
-  height: 200px;
+  height: 100px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  margin-right: 800px;
 }
 
 .navbar-image {
-  width: 160px;
+  width: 200px;
 }
 .searchbar-container {
   display: flex;
@@ -37,8 +43,66 @@ nav {
   align-items: center;
   padding: 10px;
 }
-.products-grid {
+.cards-grid {
   display: grid;
-  grid-auto-columns: repeat(3, 1fr);
+  grid-template-columns: 50% 50%;
+
   grid-gap: 10px;
+}
+.grid-container {
+  color: black;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 20px;
+  padding: 0px 10px 20px 10px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px;
+  font-size: 15px;
+  text-align: center;
+}
+.product-image {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  width: 150px;
+  margin-left: 100px;
+}
+.item1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.agregar-carrito {
+  cursor: pointer;
+}
+.button-carrito {
+  cursor: pointer;
+}
+.modal {
+  text-transform: capitalize;
+  position: fixed;
+  z-index: 99%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.modal.is-open {
+  display: flex;
+}
+.modal-container {
+  position: relative;
+  padding: 1rem;
+  min-width: 400px;
+  max-width: 800px;
+  min-height: 400px;
+  max-height: 800px;
+  overflow-y: auto;
+  background-position: center center;
+  background-size: cover;
 }
